@@ -1,0 +1,2 @@
+Criar um sistema de uso offline do site com cache
+usar created_at + updated_at da tabela Registry para excluir registros nao usados a muito tempo (repensavel, talvez nao seja bom ter isso)
