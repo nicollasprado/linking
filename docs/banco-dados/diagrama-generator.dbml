@@ -1,0 +1,28 @@
+Table user {
+    id uuid [pk, unique, not null]
+    email varchar [unique, not null]
+    password varchar [not null]
+    created_at date [default: `now()`]
+}
+
+Table registry {
+    id uuid [pk, unique, not null]
+    title varchar [not null]
+    description varchar
+    img_url varchar
+    created_at date [default: `now()`]
+    updated_at date
+    user_id uuid [ref: > user.id]
+}
+
+Table label {
+    id uuid [pk, unique, not null]
+    name varchar
+    color varchar
+}
+
+Table registry_label {
+    id uuid [pk, unique, not null]
+    registry_id uuid [ref: > registry.id]
+    label_id uuid [ref: > label.id]
+}
